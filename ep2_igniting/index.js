@@ -11,6 +11,10 @@
       </div>
     </div> 
  */
+
+
+//? This is core js .
+/*
 import React from "react"
 import ReactDOM from "react-dom/client"
 const parent = React.createElement("div", { className: "parent" }, [
@@ -24,4 +28,28 @@ const parent = React.createElement("div", { className: "parent" }, [
   ]),
 ]);
 const root = ReactDOM.createRoot(document.querySelector(".main"));
-root.render(parent)
+root.render(parent) 
+*/
+
+//? Let's dive into Component 
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+//> React Element 
+const heading = (<h1>Namaste React using JS 🚀</h1>)
+
+
+//> React Functional Component 
+const Title = ()=> <h1>Hello i am the React Heading ✅</h1>
+const HeadingComponent = ()=> (
+    <div id="container">
+        <Title/>
+        <h1 className="heading">Namaste React Functional Component</h1>
+    </div>
+)
+//* This is what we called componet composition . where there are component inside the Component .
+
+const root = ReactDOM.createRoot(document.querySelector(".main"));
+root.render(<HeadingComponent/>); 
+// root.render(heading); //* This is the way we render react elem
+
