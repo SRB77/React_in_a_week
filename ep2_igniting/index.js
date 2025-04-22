@@ -11,7 +11,8 @@
       </div>
     </div> 
  */
-
+import React from "react"
+import ReactDOM from "react-dom/client"
 const parent = React.createElement("div", { className: "parent" }, [
   React.createElement("div", { className: "class1" }, [
     React.createElement("h1", { id: "heading1" }, "Hello i am heading1"),
