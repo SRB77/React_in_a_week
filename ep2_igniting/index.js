@@ -12,7 +12,6 @@
     </div> 
  */
 
-
 //? This is core js .
 /*
 import React from "react"
@@ -31,25 +30,28 @@ const root = ReactDOM.createRoot(document.querySelector(".main"));
 root.render(parent) 
 */
 
-//? Let's dive into Component 
+//? Let's dive into Component
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//> React Element 
-const heading = (<h1>Namaste React using JS 🚀</h1>)
+//> React Element
+const heading = <h1>Namaste React using JS 🚀</h1>;
+const body = <h1>Hey i am the Body Explore me </h1>;
 
-
-//> React Functional Component 
-const Title = ()=> <h1>Hello i am the React Heading ✅</h1>
-const HeadingComponent = ()=> (
-    <div id="container">
-        <Title/>
-        <h1 className="heading">Namaste React Functional Component</h1>
-    </div>
-)
+//> React Functional Component
+const Title = () => <h1>Hello i am the React Heading ✅</h1>;
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    {Title()}  {/* This also works and completly new Bro . */}
+    <h1 className="heading">Namaste React Functional Component</h1>
+    {body}
+    //*this is a react variable and how we can render with curly brasis .and inside the curly brasis all content is also santized before executing by jsx . 
+  </div>
+);
 //* This is what we called componet composition . where there are component inside the Component .
 
 const root = ReactDOM.createRoot(document.querySelector(".main"));
-root.render(<HeadingComponent/>); 
+root.render(<HeadingComponent />);
 // root.render(heading); //* This is the way we render react elem
-
