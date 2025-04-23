@@ -85,7 +85,10 @@ const Header = ()=>{
 }
 
 //> Resturant Card 
-const ResturantCard = ()=>{
+const ResturantCard = (props)=>{
+// const ResturantCard = ({resName="Hotel Not Found !"})=>{  //* This is also a way to destructure the props
+    const {resName = "Hotel Not Found !"} = props; //* Destructuring the props 
+    
     return (
       <div className="res-card">
         <img
@@ -93,28 +96,30 @@ const ResturantCard = ()=>{
           src="https://i.pinimg.com/736x/09/e4/ac/09e4acfe3778136b196f0202b45f49d5.jpg"
           style={{ objectFit: "cover", height: "180px", width: "280px" , borderRadius:"0.5em" }}
         />
-        <h3 className="res-titile">Meghna Foods</h3>
+        <h3 className="res-titile">{resName}</h3>
         <p>North Indian, Chinese, Fast Food Janta Nagar</p>
         <h4>4.7 *</h4>
       </div>
     );
 }
+ResturantCard.defaultProps = {
+  resName: "Hotel Not Found",
+};
 //> Body Component 
 const Body = ()=>{
     return (
       <div className="body">
         <div className="search">Seaech</div>
         <div className="res-container">
+          <ResturantCard resName="Meghna Foods" />
+          <ResturantCard resName="KFC" />
+          <ResturantCard resName="Nimantran" />
+          <ResturantCard resName="Macdonalds" />
+          <ResturantCard resName="Burger Kings" />
+          <ResturantCard resName="Dominoz's" />
           <ResturantCard />
           <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-          <ResturantCard />
-        
+          <ResturantCard resName="mayFair" />
         </div>
       </div>
     );
