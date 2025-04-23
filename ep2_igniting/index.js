@@ -32,26 +32,102 @@ root.render(parent)
 
 //? Let's dive into Component
 
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 
 //> React Element
+/*
 const heading = <h1>Namaste React using JS 🚀</h1>;
 const body = <h1>Hey i am the Body Explore me </h1>;
-
+*/
 //> React Functional Component
+/*
 const Title = () => <h1>Hello i am the React Heading ✅</h1>;
 const HeadingComponent = () => (
   <div id="container">
     <Title />
-    {Title()}  {/* This also works and completly new Bro . */}
+    {Title()}  //* This also works and completly new Bro .
     <h1 className="heading">Namaste React Functional Component</h1>
     {body}
-    //*this is a react variable and how we can render with curly brasis .and inside the curly brasis all content is also santized before executing by jsx . 
+    //!this is a react variable and how we can render with curly brasis .and inside the curly brasis all content is also santized before executing by jsx . 
   </div>
 );
+
 //* This is what we called componet composition . where there are component inside the Component .
 
 const root = ReactDOM.createRoot(document.querySelector(".main"));
 root.render(<HeadingComponent />);
 // root.render(heading); //* This is the way we render react elem
+
+*/
+
+//> Header Component
+
+const Header = ()=>{
+    return (
+      <div className="header">
+        <div className="logo-container">
+          <img
+            className="logo"
+            src="https://i.pinimg.com/736x/f7/bd/47/f7bd473b21744aa670ca1e42256d13c1.jpg"
+          ></img>
+        </div>
+        <div className="nav-list">
+          <ul>
+            <li> Home</li>
+            <li> About us </li>
+            <li> Contact Us</li>
+            <li> Cart</li>
+          </ul>
+        </div>
+      </div>
+    );
+}
+
+//> Resturant Card 
+const ResturantCard = ()=>{
+    return (
+      <div className="res-card">
+        <img
+          alt="image not found"
+          src="https://i.pinimg.com/736x/09/e4/ac/09e4acfe3778136b196f0202b45f49d5.jpg"
+          style={{ objectFit: "cover", height: "180px", width: "280px" , borderRadius:"0.5em" }}
+        />
+        <h3 className="res-titile">Meghna Foods</h3>
+        <p>North Indian, Chinese, Fast Food Janta Nagar</p>
+        <h4>4.7 *</h4>
+      </div>
+    );
+}
+//> Body Component 
+const Body = ()=>{
+    return (
+      <div className="body">
+        <div className="search">Seaech</div>
+        <div className="res-container">
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+          <ResturantCard />
+        
+        </div>
+      </div>
+    );
+}
+
+const Applayout = ()=>{
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+        </div>
+    )
+}
+
+const root = ReactDOM.createRoot(document.querySelector('.main'))
+root.render(<Applayout/>)
